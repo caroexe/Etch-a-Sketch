@@ -1,13 +1,14 @@
 const container = document.querySelector('#container');
 
-function createGrid () {
 
-    for (let i=0; i < 16; i++) {
+function createGrid (gridSize) {
+
+    for (let i=0; i < gridSize; i++) {
         const row = document.createElement('div');
         row.className = 'row';
         container.appendChild(row);
 
-        for (let j=0; j < 16; j++) {
+        for (let j=0; j < gridSize; j++) {
             const square = document.createElement('div');
             square.className = 'grid';
             row.appendChild(square);
@@ -23,6 +24,14 @@ function createGrid () {
         });
     });
 
+}
+
+function removeGrid() {
+    const element = document.querySelectorAll('.row');
+
+    element.forEach(function(row) {
+        row.remove();
+    });
 }
 
 function random_rgba() {
