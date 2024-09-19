@@ -18,8 +18,14 @@ function createGrid () {
 
     box.forEach(function(myBox) {
         myBox.addEventListener('mouseover', function(e) {
-            e.target.style.backgroundColor = 'black';
+            var color = random_rgba();
+            e.target.style.backgroundColor = color;
         });
     });
 
+}
+
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
