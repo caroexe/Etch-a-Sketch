@@ -14,4 +14,12 @@ function createGrid () {
         }
     }
 
+    const box = document.querySelectorAll('.grid');
+
+    box.forEach(function(myBox) {
+        myBox.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = 'black';
+        });
+    });
+
 }
