@@ -1,7 +1,7 @@
 .grid {
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
+    transition: background-color 0.2s ease;
+    height: 15px;
+    width: 15px;
 }
 
 .row {
@@ -16,4 +16,12 @@ body {
 
 #container {
     margin-top: 100px;
+    width: 960px;
+    height: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #e0e0e0; /* Light border color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    border-radius: 10px;
+    overflow: hidden; 
 }

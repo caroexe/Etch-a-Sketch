@@ -1,7 +1,22 @@
 const container = document.querySelector('#container');
+const createGridButton = document.querySelector('#create-grid-button');
+
+createGridButton.addEventListener("click", () => {
+    let gridSize = prompt("Grid Size? (max size 100)");
+    if(gridSize > 100) {
+        alert("Too large!");
+        return;
+    }
+
+    createGrid(gridSize);
+});
 
 
 function createGrid (gridSize) {
+
+    removeGrid();
+
+    let sizeOfDiv =960/gridSize;
 
     for (let i=0; i < gridSize; i++) {
         const row = document.createElement('div');
@@ -11,9 +26,13 @@ function createGrid (gridSize) {
         for (let j=0; j < gridSize; j++) {
             const square = document.createElement('div');
             square.className = 'grid';
+            square.style.width =  `${sizeOfDiv}px`;
+            square.style.height =  `${sizeOfDiv}px`;
             row.appendChild(square);
         }
     }
+
+    
 
     const box = document.querySelectorAll('.grid');
 
