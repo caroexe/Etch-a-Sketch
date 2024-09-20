@@ -1,5 +1,8 @@
 const container = document.querySelector('#container');
 const createGridButton = document.querySelector('#create-grid-button');
+const resetGridButton = document.querySelector('#reset-grid-button');
+
+let standardGridColor = "white";
 
 createGridButton.addEventListener("click", () => {
     let gridSize = prompt("Grid Size? (max size 100)");
@@ -9,6 +12,13 @@ createGridButton.addEventListener("click", () => {
     }
 
     createGrid(gridSize);
+});
+
+resetGridButton.addEventListener("click", () => {
+    const box = document.querySelectorAll('.grid');
+    box.forEach(function(myBox){
+        myBox.style.backgroundColor = `${standardGridColor}`;
+    }); 
 });
 
 
@@ -44,6 +54,8 @@ function createGrid (gridSize) {
     });
 
 }
+
+
 
 function removeGrid() {
     const element = document.querySelectorAll('.row');
