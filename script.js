@@ -4,6 +4,8 @@ const resetGridButton = document.querySelector('#reset-grid-button');
 
 let standardGridColor = "white";
 
+createGrid(16);
+
 createGridButton.addEventListener("click", () => {
     let gridSize = prompt("Grid Size? (max size 100)");
     if(gridSize > 100) {
