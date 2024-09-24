@@ -52,6 +52,7 @@ function createGrid (gridSize) {
         myBox.addEventListener('mouseover', function(e) {
             var color = random_rgba();
             e.target.style.backgroundColor = color;
+            e.target.style.opacity -= '-0.1';
         });
     });
 
